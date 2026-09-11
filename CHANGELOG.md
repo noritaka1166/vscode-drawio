@@ -5,13 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.9.0]
 
 ### Added
 
 - Inline Draw.io editors for ```` ```drawio ```` fenced code blocks in VS Code's experimental Markdown editor (Insiders only), via the `markdown.codeBlockEditorProviders` contribution [#521](https://github.com/hediet/vscode-drawio/issues/521)
-
-## [1.9.0]
 
 ### Fixed
 
