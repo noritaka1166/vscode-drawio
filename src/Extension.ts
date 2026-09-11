@@ -12,11 +12,11 @@ import { registerFailableCommand } from "./utils/registerFailableCommand";
 
 export class Extension {
 	public readonly dispose = Disposable.fn();
-	private readonly log = this.dispose.track(
+	public readonly log = this.dispose.track(
 		vscode.window.createOutputChannel("Drawio Integration Log")
 	);
 
-	private readonly config = new Config(this.context.globalState);
+	public readonly config = new Config(this.context.globalState);
 	private readonly drawioClientFactory = new DrawioClientFactory(
 		this.config,
 		this.log,

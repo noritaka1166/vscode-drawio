@@ -107,7 +107,7 @@ function buildOffsetToLine(text: string): (charOffset: number) => number {
 /**
  * Parses attribute flags from a match string (e.g. " locked height=400").
  */
-function parseBlockAttrs(attrsStr: string): { locked: boolean; height: number | null; width: number | null } {
+export function parseBlockAttrs(attrsStr: string): { locked: boolean; height: number | null; width: number | null } {
 	const heightMatch = attrsStr.match(/\bheight=(\d+)/);
 	const widthMatch = attrsStr.match(/\bwidth=(\d+)/);
 	return {

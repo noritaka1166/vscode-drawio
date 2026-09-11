@@ -3,18 +3,29 @@ import { MobxConsoleLogger } from "@knuddels/mobx-logger";
 import * as mobx from "mobx";
 import { Extension } from "./Extension";
 import * as inlineEditor from "./inline-editor/extension";
+import { createMarkdownCodeBlockEditorsApi } from "./codeblock-editor/markdownCodeBlockEditor";
 
 if (process.env.DEV === "1") {
 	new MobxConsoleLogger(mobx);
 }
 
 export function activate(context: vscode.ExtensionContext) {
-	context.subscriptions.push(new Extension(context));
+	const extension = new Extension(context);
+	context.subscriptions.push(extension);
 
 	inlineEditor.activate(context);
 
-	// Return extendMarkdownIt so VS Code's markdown preview can find it.
-	return { extendMarkdownIt };
+	return {
+		// VS Code's markdown preview looks this up on the extension exports.
+		extendMarkdownIt,
+		// VS Code's experimental Markdown editor looks this up for the
+		// `markdown.codeBlockEditorProviders` contribution (Insiders only).
+		markdownCodeBlockEditors: createMarkdownCodeBlockEditorsApi(
+			context,
+			extension.config,
+			extension.log
+		),
+	};
 }
 
 export function deactivate() {}

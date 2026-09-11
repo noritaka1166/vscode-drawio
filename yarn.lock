@@ -216,6 +216,18 @@
     mobx "^5.10.0"
     sinon "^7.2.7"
 
+"@hpke/common@^1.10.0":
+  version "1.10.1"
+  resolved "https://registry.yarnpkg.com/@hpke/common/-/common-1.10.1.tgz#11f205e5ba24d558c1bd4ac671580d95d488af18"
+  integrity sha512-moJwhmtLtuxiUzzNp1jpfBfx8yefKoO9D/RCR9dmwrnc7qjJqId1rEtQz+lSlU5cabX8daToMSx/7HayXOiaFw==
+
+"@hpke/core@^1.9.0":
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/@hpke/core/-/core-1.9.0.tgz#4eced0597787f51fdb53ad515c3d47a3abc9fe3a"
+  integrity sha512-pFxWl1nNJeQCSUFs7+GAblHvXBCjn9EPN65vdKlYQil2aURaRxfGMO6vBKGqm1YHTKwiAxJQNEI70PbSowMP9Q==
+  dependencies:
+    "@hpke/common" "^1.10.0"
+
 "@isaacs/cliui@^8.0.2":
   version "8.0.2"
   resolved "https://registry.yarnpkg.com/@isaacs/cliui/-/cliui-8.0.2.tgz#b37667b7bc181c168782259bab42474fbf52b550"
@@ -632,6 +644,14 @@
   dependencies:
     eslint-visitor-keys "^1.1.0"
 
+"@vscode/hubrpc@next":
+  version "0.0.2-15"
+  resolved "https://registry.yarnpkg.com/@vscode/hubrpc/-/hubrpc-0.0.2-15.tgz#182acd6a9df697d8941b44623590c286a8177eb7"
+  integrity sha512-eN520Qs/0UmI5l/nEWYLqQrYfx9JX7zZ116m13YTs/8lK55iq+DLeM6GpMWWWf8TE4+OMi8hDabkl/FYRp9XPQ==
+  dependencies:
+    "@hpke/core" "^1.9.0"
+    ws "^8.18.0"
+
 "@vscode/vsce-sign-alpine-arm64@2.0.2":
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@vscode/vsce-sign-alpine-arm64/-/vsce-sign-alpine-arm64-2.0.2.tgz#4accc485e55aa6ff04b195b47f722ead57daa58e"
@@ -723,6 +743,13 @@
     yazl "^2.2.2"
   optionalDependencies:
     keytar "^7.7.0"
+
+"@vscode/web-editors@0.0.2-50":
+  version "0.0.2-50"
+  resolved "https://registry.yarnpkg.com/@vscode/web-editors/-/web-editors-0.0.2-50.tgz#cc1142f2706e5279abf0d2d0bc98be943df692f3"
+  integrity sha512-V2KrqTcN81eHejJaLfaK8a2BpkwdpYQ6iXZqth5vNh/j+pE3NHmve+lESRK/VQnRsmpb6AWoWyqCZHvwxXWTOw==
+  dependencies:
+    "@vscode/hubrpc" next
 
 "@webassemblyjs/ast@1.11.0":
   version "1.11.0"
@@ -6413,6 +6440,11 @@ ws@^6.2.1:
   dependencies:
     async-limiter "~1.0.0"
 
+ws@^8.18.0:
+  version "8.21.3"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-8.21.3.tgz#660b4faddb6a3e575c86e078126919961f4de4fc"
+  integrity sha512-201TZ/kPWxoPr/OKWjquZR1SWKXcvxdH+e1xrx89b3YbmzLMFCLfnaG1HFIgWzJOEWZ7MvpK++odZufgYR50Rw==
+
 xml-formatter@^2.0.1:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/xml-formatter/-/xml-formatter-2.3.0.tgz#99c2c33fb6c63691763e8aeb5ddf7205a9df7f16"
@@ -6496,3 +6528,8 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
+
+zod@^4.4.3:
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/zod/-/zod-4.6.2.tgz#91b2ce79ec994eaa42675499166587d3d223c961"
+  integrity sha512-lh5RCAGFa1Cm2hjtNwLQhSs/AsqdWnTQaBER9fEwN/88pSh7KOtJavtBx/0VlkN/uFd61SwYmljLMDAsHlvzBQ==

@@ -1,0 +1,16 @@
+{
+	// Browser bundle (dist/codeblock-editor/guest.js), built by the second
+	// webpack configuration. Kept apart from the extension host tsconfig
+	// because it needs the DOM lib and `exports`-aware module resolution for
+	// @vscode/web-editors.
+	"compilerOptions": {
+		"module": "esnext",
+		"moduleResolution": "bundler",
+		"target": "es2020",
+		"lib": ["es2020", "dom", "dom.iterable"],
+		"strict": true,
+		"sourceMap": true,
+		"types": []
+	},
+	"include": ["./**/*.ts", "../protocol.ts", "../../vscodeShortcuts.ts"]
+}

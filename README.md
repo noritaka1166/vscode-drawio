@@ -89,6 +89,28 @@ Add this to your VS Code `settings.json` file if you want to associate it with `
 
 You won't be able to edit arbitrary SVG files though - only those that have been created with Draw.io or this extension!
 
+## Inline Diagrams in VS Code's Markdown Editor (Experimental, Insiders only)
+
+VS Code Insiders ships an experimental WYSIWYG Markdown editor (`View: Reopen Editor With... > Markdown Editor`).
+In that editor, every fenced code block tagged `drawio` is replaced by a live, resizable Draw.io editor:
+
+````markdown
+```drawio
+<mxfile>...</mxfile>
+```
+````
+
+Edits are written straight back into the fenced block, so the Markdown file stays the single source of truth and undo/redo, dirty state and hot exit keep working.
+The block attributes of the inline editor are honored: `locked` makes a block read-only and `height=N` fixes its height, e.g. ```` ```drawio locked height=300 ````.
+The Markdown editor's own lock toggle also puts the diagrams into read-only mode.
+
+Notes:
+
+-   VS Code's contribution point for this is experimental and only exists in Insiders builds; in stable VS Code (and in the regular Markdown preview) the fence is shown as text or rendered by the preview plugin as before.
+-   Dynamic providers only run in trusted workspaces.
+-   Settings that are baked into the editor (theme, appearance, custom libraries, fonts, ...) apply the next time the Markdown editor is opened.
+-   Draw.io plugins are not loaded into the inline editors.
+
 ## Editing the Diagram and its XML Side by Side
 
 You can open the same `*.drawio` file with the Draw.io editor and as xml file.
